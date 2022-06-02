@@ -1,3 +1,10 @@
 .App {
   height: 100vh;
 }
+
+.githubIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #000;
+}

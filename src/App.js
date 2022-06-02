@@ -3,6 +3,7 @@ import { Canvas, ambientLight } from '@react-three/fiber';
 import { Environment, PresentationControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Caneca } from './components/Caneca';
+import { AiFillGithub } from 'react-icons/ai';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </PresentationControls>
         </Suspense>
       </Canvas>
+      <a href="https://github.com/arielfavaro/caneca-qmd" target="_blank" className='githubIcon' rel="noreferrer">
+        <AiFillGithub size="2rem" />
+      </a>
     </div>
   );
 }
