@@ -18,12 +18,12 @@ function App() {
             global
             config={{ mass: 2, tension: 500 }}
             snap={{ mass: 4, tension: 1500 }}
-            rotation={[0, 0.3, 0]}
+            rotation={[0, 0.2, 0]}
             polar={[-Math.PI / 3, Math.PI / 3]}
             azimuth={[-Math.PI / 1.4, Math.PI / 2]}>
-            <Caneca />
+            <Caneca position={[0, 1.2, 0]} />
           </PresentationControls>
-          <ContactShadows rotation-x={Math.PI / 2} position={[0, -7.5, 0]} opacity={0.55} width={10} height={10} blur={2.5} far={20} />
+          <ContactShadows position={[0, -7.5, 0]} opacity={0.55} width={10} height={10} blur={2.5} far={20} />
         </Canvas>
       </Suspense>
       <a href="https://github.com/arielfavaro/caneca-qmd" target="_blank" className='githubIcon' rel="noreferrer">
