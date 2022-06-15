@@ -1,5 +1,5 @@
 import './App.css';
-import { Canvas, ambientLight } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { ContactShadows, Environment, PresentationControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Caneca } from './components/Caneca';
