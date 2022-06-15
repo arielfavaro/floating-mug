@@ -12,7 +12,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Canvas camera={{ position: [0, 0, 25], fov: 45 }}>
           <ambientLight intensity={0.1} />
-          <spotLight position={[10, 10, 10]} angle={0.45} penumbra={1} />
+          <spotLight position={[10, 10, 10]} intensity={1.5} angle={0.45} penumbra={1} />
           <Environment files="/assets/hdr/potsdamer_platz_1k.hdr" />
           <PresentationControls
             global
