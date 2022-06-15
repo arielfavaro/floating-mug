@@ -28,8 +28,8 @@ function Caneca(props) {
         },
     ];
 
-    const textures = useTexture(texturesOptions.map(texture => `/assets/textures/${texture.file}`), textures => {
-        textures.map(texture => texture.flipY = false);
+    const texture = useTexture(`/assets/textures/${texturesOptions[textureActive].file}`, texture => {
+        texture.flipY = false;
     });
 
     useFrame((state, delta) => {
@@ -45,7 +45,7 @@ function Caneca(props) {
             <mesh
                 geometry={nodes['Mug'].geometry}
                 material={materials['Material']}
-                material-map={textures[textureActive]}
+                material-map={texture}
                 // material-roughness={0}
                 ref={ref}
             >
