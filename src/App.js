@@ -1,10 +1,10 @@
-import './App.css';
+import 'App.css';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ContactShadows, Environment, PresentationControls } from '@react-three/drei';
-import { Suspense } from 'react';
-import { Caneca } from './components/Caneca';
 import { AiFillGithub } from 'react-icons/ai';
-import Loading from './components/Loading';
+import Loading from 'components/Loading';
+import { Caneca } from 'components/Caneca';
 
 function App() {
   return (

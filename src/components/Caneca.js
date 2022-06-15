@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html, useGLTF, useTexture } from '@react-three/drei';
-import styles from '../styles/Caneca.module.css';
+import styles from 'styles/Caneca.module.css';
 
 function Caneca(props) {
     const ref = useRef();
