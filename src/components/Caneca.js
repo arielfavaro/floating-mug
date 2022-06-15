@@ -1,14 +1,36 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useGLTF } from '@react-three/drei';
+import { Html, useGLTF, useTexture } from '@react-three/drei';
+import styles from '../styles/Caneca.module.css';
 
 function Caneca(props) {
     const ref = useRef();
 
     const { nodes, materials } = useGLTF('/assets/model/caneca-qmd.glb');
 
-    // const [hovered, hover] = useState(false);
-    // const [clicked, click] = useState(false);
+    const [textureActive, setTextureActive] = useState(0);
+
+    const texturesOptions = [
+        {
+            name: 'Coffee and Contemplation',
+            icon: 'coffee-002.jpg',
+            file: 'coffee-002.jpg',
+        },
+        {
+            name: 'Retrowave',
+            icon: 'retrowave-001.jpg',
+            file: 'retrowave-001.jpg',
+        },
+        {
+            name: 'Quattromani',
+            icon: 'qmd.jpg',
+            file: 'qmd.jpg',
+        },
+    ];
+
+    const textures = useTexture(texturesOptions.map(texture => `/assets/textures/${texture.file}`), textures => {
+        textures.map(texture => texture.flipY = false);
+    });
 
     useFrame((state, delta) => {
         const time = state.clock.getElapsedTime();
@@ -20,8 +42,28 @@ function Caneca(props) {
 
     return (
         <group {...props} dispose={null}>
-            <mesh geometry={nodes['Mug'].geometry} material={materials['Material']} ref={ref} />
-        </group>
+            <mesh
+                geometry={nodes['Mug'].geometry}
+                material={materials['Material']}
+                material-map={textures[textureActive]}
+                // material-roughness={0}
+                ref={ref}
+            >
+                <Html position={[-8, 0, 0]} transform occlude>
+                    <ul className={styles.mugSelector}>
+                        {texturesOptions.map((texture, index) => (
+                            <li
+                                className={`${styles.mugOption} ${index === textureActive && styles.mugOptionActive}`}
+                                key={index}
+                                onClick={() => setTextureActive(index)}
+                            >
+                                <img src={`/assets/icons/${texture.icon}`} alt={texture.name} title={texture.name} />
+                            </li>
+                        ))}
+                    </ul>
+                </Html>
+            </mesh>
+        </group >
     )
 }
 

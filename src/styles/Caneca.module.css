@@ -1,0 +1,30 @@
+.mugSelector {
+    list-style: none;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    width: 150px;
+    /* box-shadow: 0px 12px 22px rgba(0, 0, 0, 0.2); */
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e1e1e1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.mugOption {
+    padding: 6px 0px;
+    cursor: pointer;
+    width: 50px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.mugOption img {
+    width: 100%;
+}
+
+.mugOption:hover, .mugOptionActive {
+    border-color: #000;
+}
