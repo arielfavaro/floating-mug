@@ -6,7 +6,7 @@ import styles from '../styles/Caneca.module.css';
 function Caneca(props) {
     const ref = useRef();
 
-    const { nodes, materials } = useGLTF('/assets/model/caneca-qmd.glb');
+    const { nodes, materials } = useGLTF('/assets/model/caneca.glb');
 
     const [textureActive, setTextureActive] = useState(0);
 

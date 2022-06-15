@@ -26,7 +26,7 @@ function App() {
           <ContactShadows position={[0, -7.5, 0]} opacity={0.55} width={10} height={10} blur={2.5} far={20} />
         </Canvas>
       </Suspense>
-      <a href="https://github.com/arielfavaro/caneca-qmd" target="_blank" className='githubIcon' rel="noreferrer">
+      <a href="https://github.com/arielfavaro/floating-mug" target="_blank" className='githubIcon' rel="noreferrer">
         <AiFillGithub size="2rem" />
       </a>
     </div>
