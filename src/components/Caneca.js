@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html, useGLTF, useTexture } from '@react-three/drei';
 import styles from 'styles/Caneca.module.css';
+import { texturesOptions } from 'lib/texturesOptions';
 
 function Caneca(props) {
     const ref = useRef();
@@ -9,24 +10,6 @@ function Caneca(props) {
     const { nodes, materials } = useGLTF('/assets/model/caneca.glb');
 
     const [textureActive, setTextureActive] = useState(0);
-
-    const texturesOptions = [
-        {
-            name: 'Coffee and Contemplation',
-            icon: 'coffee-002.jpg',
-            file: 'coffee-002.jpg',
-        },
-        {
-            name: 'Retrowave',
-            icon: 'retrowave-001.jpg',
-            file: 'retrowave-001.jpg',
-        },
-        {
-            name: 'Quattromani',
-            icon: 'qmd.jpg',
-            file: 'qmd.jpg',
-        },
-    ];
 
     const texture = useTexture(`/assets/textures/${texturesOptions[textureActive].file}`, texture => {
         texture.flipY = false;
