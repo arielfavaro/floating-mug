@@ -3,9 +3,12 @@ import { useFrame } from '@react-three/fiber';
 import { Html, useGLTF, useTexture } from '@react-three/drei';
 import styles from 'styles/Caneca.module.css';
 import { texturesOptions } from 'lib/texturesOptions';
+import { useIsMobile } from 'hooks/useIsMobile';
 
 function Caneca(props) {
     const ref = useRef();
+
+    const isMobile = useIsMobile();
 
     const { nodes, materials } = useGLTF('/assets/model/caneca.glb');
 
@@ -37,7 +40,7 @@ function Caneca(props) {
                 material-roughnessMap={roughnessTexture}
                 ref={ref}
             >
-                <Html position={[-8, 0, 0]} transform occlude>
+                <Html position={isMobile ? [0, 8.5, 0] : [-8, 0, 0]} transform occlude>
                     <ul className={styles.mugSelector}>
                         {texturesOptions.map((texture, index) => (
                             <li
