@@ -11,6 +11,10 @@ function Caneca(props) {
 
     const [textureActive, setTextureActive] = useState(0);
 
+    const roughnessTexture = useTexture(`/assets/textures/roughness.png`, texture => {
+        texture.flipY = false;
+    });
+
     const texture = useTexture(`/assets/textures/${texturesOptions[textureActive].file}`, texture => {
         texture.flipY = false;
     });
@@ -29,7 +33,8 @@ function Caneca(props) {
                 geometry={nodes['Mug'].geometry}
                 material={materials['Material']}
                 material-map={texture}
-                // material-roughness={0}
+                material-roughness={1}
+                material-roughnessMap={roughnessTexture}
                 ref={ref}
             >
                 <Html position={[-8, 0, 0]} transform occlude>
