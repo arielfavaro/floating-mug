@@ -7,8 +7,8 @@ const texturesOptions = [
     },
     {
         name: 'Retrowave',
-        icon: 'retrowave-001.jpg',
-        file: 'retrowave-001.jpg',
+        icon: 'retrowave-002.jpg',
+        file: 'retrowave-002.jpg',
         isActive: true,
     },
     {
